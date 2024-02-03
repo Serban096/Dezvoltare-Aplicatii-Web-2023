@@ -3,6 +3,12 @@
     public class CompetitionDTO
     {
         public Guid Id { get; set; }
-        public string? Name { get; set; }
+
+        public int NoOfTeams { get; set; }
+
+        public int YearFounded { get; set; }
+
+        public Type CompType { get; set; }
+
     }
 }
