@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eS4oupcweCtYUOywxlVv4Ama0mTnFecOWJ/srKyFt37R+zZJT6Awo6oJRXwjlaM21HaaswwBHhfTx6fFqKbXLA==",
+  "dgSpecHash": "NMvQQZHDJAylgncYjb/F2fdgLfsOtWDm0VmNJWyhc54lw6R2fgdi1VejMcymxHGalyzTvNi1J/5R7CTmbsQzXQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\baesu\\Desktop\\optional\\Proiect\\Proiect.csproj",
+  "projectFilePath": "C:\\Users\\baesu\\Source\\Repos\\Dezvoltare-Aplicatii-Web-2023\\Proiect.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\baesu\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\baesu\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

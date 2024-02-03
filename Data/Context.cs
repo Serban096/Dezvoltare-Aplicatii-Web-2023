@@ -4,7 +4,7 @@ using Proiect.Models;
 namespace Proiect.Data
 {
     public class Context : DbContext
-    {
+    {   
         public DbSet<Player> Players { get; set; }
         public DbSet<Stadium> Stadiums { get; set; }
         public DbSet<Team> Teams { get; set; }
