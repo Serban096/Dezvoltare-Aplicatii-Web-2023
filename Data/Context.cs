@@ -10,6 +10,7 @@ namespace Proiect.Data
         public DbSet<Team> Teams { get; set; }
         public DbSet<Competition> Competitions { get; set; }
         public DbSet<TeamsCompetitions> TeamsCompetitions { get; set; }
+        public DbSet<User> Users { get; set; }
 
         public Context(DbContextOptions<Context> options) : base(options) { }
 

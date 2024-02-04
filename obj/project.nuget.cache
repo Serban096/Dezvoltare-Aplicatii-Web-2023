@@ -1,15 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "NMvQQZHDJAylgncYjb/F2fdgLfsOtWDm0VmNJWyhc54lw6R2fgdi1VejMcymxHGalyzTvNi1J/5R7CTmbsQzXQ==",
+  "dgSpecHash": "zlc4qCOMnyBNZl4BzWQiVmFXOaOeyd3ZVMEG/nMan7r0synoRO1LN3MB29u8RfWR5AqcS7WfC/kjBLKTMolRNg==",
   "success": true,
   "projectFilePath": "C:\\Users\\baesu\\Source\\Repos\\Dezvoltare-Aplicatii-Web-2023\\Proiect.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\baesu\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\baesu\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\baesu\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\baesu\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\baesu\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.11\\microsoft.aspnetcore.openapi.7.0.11.nupkg.sha512",
     "C:\\Users\\baesu\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
-    "C:\\Users\\baesu\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\baesu\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\baesu\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.1\\microsoft.data.sqlclient.5.1.1.nupkg.sha512",
     "C:\\Users\\baesu\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.1.0\\microsoft.data.sqlclient.sni.runtime.5.1.0.nupkg.sha512",
     "C:\\Users\\baesu\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.15\\microsoft.entityframeworkcore.7.0.15.nupkg.sha512",
