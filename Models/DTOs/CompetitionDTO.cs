@@ -8,7 +8,5 @@
 
         public int YearFounded { get; set; }
 
-        public Type CompType { get; set; }
-
     }
 }

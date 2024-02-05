@@ -21,6 +21,10 @@ namespace Proiect.Controllers
             return Ok(_userService.GetUserByUsername(username));
         }
 
-
+        [HttpGet("all")]
+        public IActionResult GetUsers()
+        {
+            return Ok(_userService.GetAllUsers());
+        }
     }
 }

@@ -151,3 +151,4 @@ C:\Users\baesu\Source\Repos\Dezvoltare-Aplicatii-Web-2023\obj\Debug\net7.0\Proie
 C:\Users\baesu\Source\Repos\Dezvoltare-Aplicatii-Web-2023\obj\Debug\net7.0\Proiect.genruntimeconfig.cache
 C:\Users\baesu\Source\Repos\Dezvoltare-Aplicatii-Web-2023\obj\Debug\net7.0\ref\Proiect.dll
 C:\Users\baesu\Source\Repos\Dezvoltare-Aplicatii-Web-2023\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\baesu\Source\Repos\Dezvoltare-Aplicatii-Web-2023\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

@@ -21,7 +21,8 @@ namespace Proiect.Helpers.Seeders
                     FirstName = "Fist name User 1",
                     LastName = "Last name User 1",
                     Email = "user1@mail.com",
-                    Username = "user1"
+                    Username = "user1",
+                    Password = "pass1"
                 };
 
                 var user2 = new User
@@ -29,7 +30,8 @@ namespace Proiect.Helpers.Seeders
                     FirstName = "Fist name User 2",
                     LastName = "Last name User 2",
                     Email = "user2@mail.com",
-                    Username = "user2"
+                    Username = "user2",
+                    Password = "pass2"
                 };
 
                 _context.Users.Add(user1);

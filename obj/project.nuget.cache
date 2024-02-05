@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "zlc4qCOMnyBNZl4BzWQiVmFXOaOeyd3ZVMEG/nMan7r0synoRO1LN3MB29u8RfWR5AqcS7WfC/kjBLKTMolRNg==",
+  "dgSpecHash": "XVVur82hJAyW7JxEJsacS+R2kbCmamq3C4ka21/GxYuysFiMRmCt6JCrlK2K8VSMWkaIet6IvfnBIZ+vZc//vg==",
   "success": true,
   "projectFilePath": "C:\\Users\\baesu\\Source\\Repos\\Dezvoltare-Aplicatii-Web-2023\\Proiect.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\baesu\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\baesu\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\baesu\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\baesu\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\baesu\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
