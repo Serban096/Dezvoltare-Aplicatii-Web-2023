@@ -20,5 +20,7 @@ namespace Proiect.Controllers
         {
             return Ok(_userService.GetUserByUsername(username));
         }
+
+
     }
 }

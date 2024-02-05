@@ -1,20 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Proiect.Data;
+using Proiect.Models;
+using Proiect.Repositories.GenericRepository;
+using Proiect.Services.UserService;
 
 namespace Proiect.Repositories.UserRepository
 {
-    public class UsersController : ControllerBase
+    public class UserRepository : GenericRepository<User>, IUserRepository
     {
-        private IUserService _userService;
-
-        public UsersController(IUserService userService)
+        public UserRepository(Context context) : base(context)
         {
-            _userService = userService;
         }
 
-        [HttpGet]
-        public IActionResult GetUserByUserName([FromBody] string username)
+
+        public User FindByUsername(string username)
         {
-            return Ok(_userService.GetUserByUsername(username));
+            return _table.FirstOrDefault(u => u.Username.Equals(username));
         }
     }
 }

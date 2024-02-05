@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Proiect.Models;
 using Proiect.Models.DTOs;
 using Proiect.Repositories.UserRepository;
 
@@ -16,17 +17,19 @@ namespace Proiect.Services.UserService
         }
 
 
-        public async Task<List<UserDto>> GetAllUsers()
+        public async Task<List<UserDTO>> GetAllUsers()
         {
             var userList = await _userRepository.GetAllAsync();
-            return _mapper.Map<List<UserDto>>(userList);
+            return _mapper.Map<List<UserDTO>>(userList);
         }
 
-        public UserDto GetUserByUsername(string username)
+        public UserDTO GetUserByUsername(string username)
         {
             var user = _userRepository.FindByUsername(username);
 
-            return _mapper.Map<UserDto>(user);
+            return _mapper.Map<UserDTO>(user);
         }
+ 
+
     }
 }

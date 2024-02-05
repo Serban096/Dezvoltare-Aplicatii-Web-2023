@@ -4,8 +4,8 @@ namespace Proiect.Services.UserService
 {
     public interface IUserService
     {
-        Task<List<UserDto>> GetAllUsers();
+        Task<List<UserDTO>> GetAllUsers();
 
-        UserDto GetUserByUsername(string username);
+        UserDTO GetUserByUsername(string username);
     }
 }

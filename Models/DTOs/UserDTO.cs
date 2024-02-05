@@ -1,6 +1,6 @@
 ﻿namespace Proiect.Models.DTOs
 {
-    public class UserDto
+    public class UserDTO
     {
         public Guid Id { get; set; }
         public string FullName { get; set; } = default!;
