@@ -9,5 +9,9 @@ namespace Proiect.Services.TeamService
         TeamDTO GetTeamByName(string name);
 
         Task CreateTeam(TeamDTO team);
+
+        Task Delete(Guid id);
+
+        Task UpdateTeam(TeamDTO team);
     }
 }

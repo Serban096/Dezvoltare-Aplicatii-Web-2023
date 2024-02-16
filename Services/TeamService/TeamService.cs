@@ -28,9 +28,9 @@ namespace Proiect.Services.TeamService
 
         public TeamDTO GetTeamByName(string name)
         {
-            var user = _teamRepository.FindByName(name);
+            var team = _teamRepository.FindByName(name);
 
-            return _mapper.Map<TeamDTO>(name);
+            return _mapper.Map<TeamDTO>(team);
         }
 
         public async Task CreateTeam(TeamDTO team)
@@ -44,6 +44,31 @@ namespace Proiect.Services.TeamService
             };
 
             await _teamRepository.CreateAsync(_mapper.Map<Team>(newTeam));
+            await _teamRepository.SaveAsync();
+        }
+
+        public async Task Delete(Guid id)
+        {
+            var team = _teamRepository.FindById(id);
+            if (team == null)
+            {
+                throw new Exception("Team doesnt exist");
+            }
+            _teamRepository.Delete(team);
+            await _teamRepository.SaveAsync();
+        }
+
+        public async Task UpdateTeam(TeamDTO team)
+        {
+            var oldTeam = _teamRepository.FindById(team.Id);
+            if (oldTeam == null)
+            {
+                throw new Exception("The team doesn't exist");
+            }
+            if (team.Name != null && team.Name != "")
+                oldTeam.Name = team.Name;
+
+            _teamRepository.Update(_mapper.Map<Team>(oldTeam));
             await _teamRepository.SaveAsync();
         }
     }

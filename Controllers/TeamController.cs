@@ -25,9 +25,17 @@ namespace Proiect.Controllers
         }
 
         [HttpGet("all")]
-        public IActionResult GetTeams()
+        public async Task<IActionResult> GetTeamsAsync()
         {
-            return Ok(_teamService.GetAllTeams());
+            try
+            {
+                var teams = await _teamService.GetAllTeams();
+                return Ok(teams);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost("CreateTeam")]
@@ -36,6 +44,34 @@ namespace Proiect.Controllers
             try
             {
                 await _teamService.CreateTeam(team);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteTeam(Guid teamId)
+        {
+            try
+            {
+                await _teamService.Delete(teamId);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPatch]
+        public async Task<IActionResult> EditPost([FromBody] TeamDTO team)
+        {
+            try
+            {
+                await _teamService.UpdateTeam(team);
                 return Ok();
             }
             catch (Exception ex)

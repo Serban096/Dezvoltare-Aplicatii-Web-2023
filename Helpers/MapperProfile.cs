@@ -15,6 +15,9 @@ namespace Proiect.Helpers
             CreateMap<User, UserDTO>()
                 .ForMember(ud => ud.FullName,
                 opts => opts.MapFrom(u => u.FirstName + u.LastName));
+
+            CreateMap<Team, TeamDTO>();
+            CreateMap<TeamDTO, Team>();
         }
     }
 }
