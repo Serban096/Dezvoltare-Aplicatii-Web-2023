@@ -18,6 +18,9 @@ namespace Proiect.Helpers
 
             CreateMap<Team, TeamDTO>();
             CreateMap<TeamDTO, Team>();
+
+            CreateMap<Player, PlayerDTO>();
+            CreateMap<PlayerDTO, Player>();
         }
     }
 }

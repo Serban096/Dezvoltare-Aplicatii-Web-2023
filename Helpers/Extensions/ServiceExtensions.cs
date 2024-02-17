@@ -1,6 +1,8 @@
 ﻿using Proiect.Helpers.Seeders;
+using Proiect.Repositories.PlayerRepository;
 using Proiect.Repositories.TeamRepository;
 using Proiect.Repositories.UserRepository;
+using Proiect.Services.PlayerService;
 using Proiect.Services.TeamService;
 using Proiect.Services.UserService;
 
@@ -14,6 +16,8 @@ namespace Proiect.Helpers.Extensions
 
             services.AddTransient<ITeamRepository, TeamRepository>();
 
+            services.AddTransient<IPlayerRepository, PlayerRepository>();
+
             return services;
         }
 
@@ -22,6 +26,8 @@ namespace Proiect.Helpers.Extensions
             services.AddTransient<IUserService, UserService>();
 
             services.AddTransient<ITeamService, TeamService>();
+
+            services.AddTransient<IPlayerService, PlayerService>();
 
             return services;
         }

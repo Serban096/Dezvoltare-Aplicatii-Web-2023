@@ -18,11 +18,6 @@ namespace Proiect.Controllers
             _teamService = teamService;
         }
 
-        [HttpGet]
-        public IActionResult GetTeamByName([FromBody] string name)
-        {
-            return Ok(_teamService.GetTeamByName(name));
-        }
 
         [HttpGet("all")]
         public async Task<IActionResult> GetTeamsAsync()
@@ -67,7 +62,7 @@ namespace Proiect.Controllers
         }
 
         [HttpPatch]
-        public async Task<IActionResult> EditPost([FromBody] TeamDTO team)
+        public async Task<IActionResult> EditTeam([FromBody] TeamDTO team)
         {
             try
             {
