@@ -35,7 +35,7 @@ namespace Proiect.Controllers
         [HttpPost("create-user")]
         public async Task<IActionResult> CreateUser(Models.DTOs.UserDTO.UserRegistrationDTO userRegistrationDTO)
         {
-            var response = await _userService.Register(userRegistrationDTO, Models.Enums.Role.User);
+            var response = await _userService.Register(userRegistrationDTO, Role.User);
             if (response == false)
             {
                 return BadRequest();
@@ -45,10 +45,10 @@ namespace Proiect.Controllers
         }
 
         [AllowAnonymous]
-        [HttpPost("create-employee")]
-        public async Task<IActionResult> CreateEmployee(Models.DTOs.UserDTO.UserRegistrationDTO userRegistrationDTO)
+        [HttpPost("create-admin")]
+        public async Task<IActionResult> CreateAdmin(UserRegistrationDTO userRegistrationDTO)
         {
-            var response = await _userService.Register(userRegistrationDTO, Models.Enums.Role.Admin);
+            var response = await _userService.Register(userRegistrationDTO, Role.Admin);
 
             if (response == false)
             {
@@ -62,7 +62,7 @@ namespace Proiect.Controllers
         [HttpGet("get-users")]
         public async Task<IActionResult> GetAllUsers()
         {
-            return Ok(_userService.GetAllUsers());
+            return Ok(await _userService.GetAllUsers());
         }
 
         [Authorize]
@@ -73,18 +73,18 @@ namespace Proiect.Controllers
         }
 
 
-        [Authorize(Role.User)]
-        [HttpGet("check-auth-customer")]
-        public IActionResult GetTextCustomer()
+        [Authorize(Roles = "User")]
+        [HttpGet("check-auth-User")]
+        public IActionResult GetTextUser()
         {
             return Ok(new { Message = "Customer is logged in" });
         }
 
-        [Authorize(Role.Admin)]
-        [HttpGet("check-auth-employee")]
-        public IActionResult GetTextEmployee()
+        [Authorize(Roles = "Admin")]
+        [HttpGet("check-auth-admin")]
+        public IActionResult GetTextAdmin()
         {
-            return Ok(new { Message = "Employee is logged in" });
+            return Ok(new { Message = "Admin is logged in" });
         }
 
 

@@ -27,18 +27,18 @@ namespace Proiect.Services.UserService
             return await _userRepository.FindByIdAsync(id);
         }
 
-        public async Task<Models.DTOs.UserDTO.UserLoginResponse> Login(Models.DTOs.UserDTO.UserLoginDTO userDTO)
+        public async Task<UserLoginResponse> Login(UserLoginDTO userLoginDTO)
         {
-            var user = await _userRepository.FindByUsername(userDTO.Username);
-            if (user == null || !BCrypt.Net.BCrypt.Verify(userDTO.Password, user.Password))
+            var user = await _userRepository.FindByUsername(userLoginDTO.Username);
+            if (user == null || !BCrypt.Net.BCrypt.Verify(userLoginDTO.Password, user.Password))
             {
                 return null;
             }
-            return new Models.DTOs.UserDTO.UserLoginResponse(user);
+            return new UserLoginResponse(user);
 
         }
 
-        public async Task<bool> Register(Models.DTOs.UserDTO.UserRegistrationDTO newUser, Role userRole)
+        public async Task<bool> Register(UserRegistrationDTO newUser, Role userRole)
         {
             var UserToCreate = new User
             {

@@ -230,3 +230,4 @@ C:\Users\baesu\Source\Repos\Serban096\Dezvoltare-Aplicatii-Web-2023\obj\Debug\ne
 C:\Users\baesu\Source\Repos\Serban096\Dezvoltare-Aplicatii-Web-2023\obj\Debug\net7.0\Proiect.pdb
 C:\Users\baesu\Source\Repos\Serban096\Dezvoltare-Aplicatii-Web-2023\obj\Debug\net7.0\Proiect.genruntimeconfig.cache
 C:\Users\baesu\Source\Repos\Serban096\Dezvoltare-Aplicatii-Web-2023\obj\Debug\net7.0\ref\Proiect.dll
+C:\Users\baesu\source\repos\Serban096\Dezvoltare-Aplicatii-Web-2023\bin\Debug\net7.0\BCrypt.Net-Next.dll

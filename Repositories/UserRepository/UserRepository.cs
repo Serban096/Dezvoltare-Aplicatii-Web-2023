@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Proiect.Data;
 using Proiect.Models;
 using Proiect.Repositories.GenericRepository;
@@ -13,9 +14,9 @@ namespace Proiect.Repositories.UserRepository
         }
 
 
-        public User FindByUsername(string username)
+        public async Task<User> FindByUsername(string username)
         {
-            return _table.FirstOrDefault(u => u.Username.Equals(username));
+            return await _table.FirstOrDefaultAsync(u => u.Username.Equals(username));
         }
     }
 }

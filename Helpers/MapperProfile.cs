@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Proiect.Models.DTOs;
 using Proiect.Models;
+using Proiect.Models.DTOs.UserDTO;
 
 namespace Proiect.Helpers
 {
@@ -9,12 +10,14 @@ namespace Proiect.Helpers
         public MapperProfile()
         {
 
-            CreateMap<User, UserDTO>();
-            CreateMap<UserDTO, User>();
+            CreateMap<User, UserLoginDTO>();
+            CreateMap<UserLoginDTO, User>();
 
-            CreateMap<User, UserDTO>()
-                .ForMember(ud => ud.FullName,
-                opts => opts.MapFrom(u => u.FirstName + u.LastName));
+            CreateMap<User, UserRegistrationDTO>();
+            CreateMap<UserRegistrationDTO, User>();
+
+            CreateMap<User, UserLoginResponse>();
+            CreateMap<UserLoginResponse, User>();
 
             CreateMap<Team, TeamDTO>();
             CreateMap<TeamDTO, Team>();

@@ -1,13 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "nAu5fex6JwD6GlfilmIcsE803m+aGKatszCFNK+lGH0bFY2qeklVpd6JxATqHwZibX7qV/5rtWRDBbjabMwj1Q==",
+  "dgSpecHash": "8Bpih2hclV8xZRnEl4YGMFulPAfqgdPNasPf7QApN923N/6vFcSbLOSYqkA4rHx1QGjIzzYJelBVtFsUP7djew==",
   "success": true,
-  "projectFilePath": "C:\\Users\\baesu\\Source\\Repos\\Serban096\\Dezvoltare-Aplicatii-Web-2023\\Proiect.csproj",
+  "projectFilePath": "C:\\Users\\baesu\\source\\repos\\Serban096\\Dezvoltare-Aplicatii-Web-2023\\Proiect.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\baesu\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\baesu\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\baesu\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\baesu\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\baesu\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\baesu\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\baesu\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.11\\microsoft.aspnetcore.openapi.7.0.11.nupkg.sha512",
     "C:\\Users\\baesu\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
