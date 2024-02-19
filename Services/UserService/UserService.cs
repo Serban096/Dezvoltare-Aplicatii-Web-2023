@@ -57,5 +57,29 @@ namespace Proiect.Services.UserService
             return await _userRepository.SaveAsync();
         }
 
+        public async Task Delete(Guid id)
+        {
+            var user = _userRepository.FindById(id);
+            if (user == null)
+            {
+                throw new Exception("User doesnt exist");
+            }
+            _userRepository.Delete(user);
+            await _userRepository.SaveAsync();
+        }
+
+        public async Task UpdateUser(UserLoginResponse user)
+        {
+            var oldUser = _userRepository.FindById(user.Id);
+            if (oldUser == null)
+            {
+                throw new Exception("The user doesn't exist");
+            }
+            oldUser.Username = user.UserName;
+
+            _userRepository.Update(_mapper.Map<User>(oldUser));
+            await _userRepository.SaveAsync();
+        }
+
     }
 }

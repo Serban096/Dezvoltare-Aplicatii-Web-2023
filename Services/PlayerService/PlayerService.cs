@@ -31,7 +31,8 @@ namespace Proiect.Services.PlayerService
                 Id = Guid.NewGuid(),
                 Name = player.Name,
                 Age = player.Age,
-                Position = player.Position
+                Position = player.Position,
+                TeamId = player.teamId
             };
 
             await _playerRepository.CreateAsync(_mapper.Map<Player>(newPlayer));

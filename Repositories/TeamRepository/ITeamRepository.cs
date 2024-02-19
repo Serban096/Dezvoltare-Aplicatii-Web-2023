@@ -6,5 +6,6 @@ namespace Proiect.Repositories.TeamRepository
     public interface ITeamRepository : IGenericRepository<Team>
     {
         Team FindByName(string name);
+
     }
 }

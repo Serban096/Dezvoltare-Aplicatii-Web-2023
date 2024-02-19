@@ -4,6 +4,8 @@ using Proiect.Models.DTOs;
 using Proiect.Models;
 using Proiect.Services.TeamService;
 using Proiect.Services.UserService;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace Proiect.Controllers
 {
@@ -74,6 +76,36 @@ namespace Proiect.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpGet("filter-by-city")]
+        public async Task<IActionResult> FilterTeamsByCity(string city)
+        {
+            try
+            {
+                var teamsInCity = _teamService.GetTeamsByCity(city);
+              
+                return Ok(teamsInCity);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("teams-with-players")]
+        public async Task<IActionResult> GetTeamsWithPlayers()
+        {
+            try
+            {
+                var teamsWithPlayers =  _teamService.GetTeamsWithPlayers();
+                   
+                return Ok(teamsWithPlayers);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
 
     }
 }

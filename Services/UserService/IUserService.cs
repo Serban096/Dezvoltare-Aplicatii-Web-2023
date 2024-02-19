@@ -7,9 +7,13 @@ namespace Proiect.Services.UserService
 {
     public interface IUserService
     {
-        Task<Models.DTOs.UserDTO.UserLoginResponse> Login(Models.DTOs.UserDTO.UserLoginDTO userDTO);
+        Task<UserLoginResponse> Login(UserLoginDTO userDTO);
         Task<User> GetById(Guid id);
-        Task<bool> Register(Models.DTOs.UserDTO.UserRegistrationDTO newUser, Role userRole);
+        Task<bool> Register(UserRegistrationDTO newUser, Role userRole);
         Task<List<User>> GetAllUsers();
+        Task Delete(Guid id);
+
+        Task UpdateUser(UserLoginResponse user);
+
     }
 }

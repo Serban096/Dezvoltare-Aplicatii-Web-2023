@@ -86,7 +86,36 @@ namespace Proiect.Controllers
         {
             return Ok(new { Message = "Admin is logged in" });
         }
+        [HttpDelete]
+        public async Task<IActionResult> DeleteUser(Guid userId)
+        {
+            try
+            {
+                await _userService.Delete(userId);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
+        [HttpPatch]
+        public async Task<IActionResult> EditUser([FromBody] UserLoginResponse user)
+        {
+            try
+            {
+                await _userService.UpdateUser(user);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
     }
+
+
+
 }

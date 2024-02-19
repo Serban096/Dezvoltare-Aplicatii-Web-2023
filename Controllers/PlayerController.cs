@@ -40,7 +40,7 @@ namespace Proiect.Controllers
                 return Ok();
             }
             catch (Exception ex)
-            {
+            { 
                 return BadRequest(ex.Message);
             }
         }

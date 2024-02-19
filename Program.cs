@@ -5,6 +5,7 @@ using AutoMapper;
 using Proiect.Services.TeamService;
 using Proiect.Helpers.Seeders;
 using Proiect.Helpers.Jwt;
+using Proiect.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,6 +37,7 @@ builder.Services.AddHelpers();
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 
 var app = builder.Build();
 SeedData(app);

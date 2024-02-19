@@ -7,7 +7,7 @@ namespace Proiect.Repositories.GenericRepository
         // Get all data
         Task<List<TEntity>> GetAllAsync();
 
-
+        IQueryable<TEntity> GetAllQueryable();
         // Create
         void Create(TEntity entity);
         Task CreateAsync(TEntity entity);

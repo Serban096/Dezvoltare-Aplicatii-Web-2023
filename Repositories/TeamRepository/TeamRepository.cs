@@ -1,4 +1,5 @@
-﻿using Proiect.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using Proiect.Data;
 using Proiect.Models;
 using Proiect.Repositories.GenericRepository;
 using Proiect.Repositories.UserRepository;
@@ -16,5 +17,7 @@ namespace Proiect.Repositories.TeamRepository
         {
             return _table.FirstOrDefault(t => t.Name.Equals(name));
         }
+
+
     }
 }

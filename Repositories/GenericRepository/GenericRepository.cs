@@ -21,13 +21,16 @@ namespace Proiect.Repositories.GenericRepository
             return _table.AsNoTracking().ToList();
         }
 
+        public IQueryable<TEntity> GetAllQueryable()
+        {
+            return _table.AsNoTracking();
+        }
         public async Task<List<TEntity>> GetAllAsync()
         {
             return await _table.AsNoTracking().ToListAsync();
         }
 
-    
-
+ 
         // Create
         public void Create(TEntity entity)
         {
