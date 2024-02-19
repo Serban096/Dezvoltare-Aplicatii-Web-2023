@@ -2,8 +2,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Proiect.Models.Enums;
 using System.Linq;
+using Proiect.Models;
+using Microsoft.AspNetCore.Authorization;
 
-namespace Proiect.Models.Attributes
+namespace Proiect.Helpers.Attributes
 {
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class)]
     public class AuthorizeAttribute : Attribute, IAuthorizationFilter
@@ -20,7 +22,7 @@ namespace Proiect.Models.Attributes
             if (allowAnonymous) return;
 
             User? user = context.HttpContext.Items["User"] as User;
-            if (user == null || (_roles.Any() && !_roles.Contains(user.Role)))
+            if (user == null || _roles.Any() && !_roles.Contains(user.Role))
             {
                 context.Result = new JsonResult(new { message = "Unauthorized" }) { StatusCode = StatusCodes.Status401Unauthorized };
             }

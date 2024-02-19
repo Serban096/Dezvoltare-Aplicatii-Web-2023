@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Proiect.Helpers.Jwt;
 using Proiect.Models;
 using Proiect.Models.DTOs;
 using Proiect.Models.DTOs.UserDTO;
@@ -11,11 +12,13 @@ namespace Proiect.Services.UserService
     {
         public IUserRepository _userRepository;
         public IMapper _mapper;
+        private readonly IJwt _jwtUtils;
 
-        public UserService(IUserRepository userRepository, IMapper mapper)
+        public UserService(IUserRepository userRepository, IMapper mapper, IJwt jwtUtils)
         {
             _userRepository = userRepository;
             _mapper = mapper;
+            _jwtUtils = jwtUtils;
         }
         public async Task<List<User>> GetAllUsers()
         {
@@ -34,7 +37,8 @@ namespace Proiect.Services.UserService
             {
                 return null;
             }
-            return new UserLoginResponse(user);
+            var token = _jwtUtils.GenerateJwtToken(user);
+            return new UserLoginResponse(user, token);
 
         }
 

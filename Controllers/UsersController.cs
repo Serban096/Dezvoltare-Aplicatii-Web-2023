@@ -74,10 +74,10 @@ namespace Proiect.Controllers
 
 
         [Authorize(Roles = "User")]
-        [HttpGet("check-auth-User")]
+        [HttpGet("check-auth-user")]
         public IActionResult GetTextUser()
         {
-            return Ok(new { Message = "Customer is logged in" });
+            return Ok(new { Message = "User is logged in" });
         }
 
         [Authorize(Roles = "Admin")]
