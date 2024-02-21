@@ -10,5 +10,7 @@ namespace Proiect.Repositories.UserRepository
         Task CreateAsync(User user);
         Task Update(User user);
         Task Delete(Guid id);
+
+        string GenerateJwtToken(User user);
     }
 }

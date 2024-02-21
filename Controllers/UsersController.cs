@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Proiect.Models.DTOs;
 using Proiect.Models.DTOs.UserDTO;
@@ -70,8 +71,24 @@ namespace Proiect.Controllers
             }
         }
 
+        [HttpPost("login")]
+        public async Task<string> Login([FromBody] UserLoginDTO userLoginDTO)
+        {
+            return await _userService.Login(userLoginDTO);
+        }
+
+        [HttpPost("logout")]
+        public async Task Logout()
+        {
+            await _userService.Logout();
+        }
+
+        [HttpPost("register")]
+        public async Task<string> Register([FromBody] UserRegistrationDTO userRegistrationDTO)
+        {
+            return await _userService.Register(userRegistrationDTO);
+        }
+
     }
-
-
 
 }

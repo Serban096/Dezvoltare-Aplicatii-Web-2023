@@ -14,7 +14,7 @@ namespace Proiect.Helpers.Seeders
 
         public void SeedInitialUsers()
         {
-            if (!_context.Users.Any())
+            /*if (!_context.Users.Any())
             {
                 var user1 = new User
                 {
@@ -38,7 +38,7 @@ namespace Proiect.Helpers.Seeders
                 _context.Users.Add(user2);
 
                 _context.SaveChanges();
-            }
+            }*/
         }
     }
 }
