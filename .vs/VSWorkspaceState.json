@@ -4,6 +4,6 @@
     "\\Controllers",
     "\\Models"
   ],
-  "SelectedNode": "\\Models\\Base",
+  "SelectedNode": "\\Controllers\\TeamController.cs",
   "PreviewInSolutionExplorer": false
 }

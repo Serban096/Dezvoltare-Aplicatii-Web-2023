@@ -16,8 +16,8 @@ namespace Proiect.Helpers
             CreateMap<User, UserRegistrationDTO>();
             CreateMap<UserRegistrationDTO, User>();
 
-            CreateMap<User, UserLoginResponse>();
-            CreateMap<UserLoginResponse, User>();
+            CreateMap<User, UserUpdateDTO>();
+            CreateMap<UserUpdateDTO, User>();
 
             CreateMap<Team, TeamDTO>();
             CreateMap<TeamDTO, Team>();

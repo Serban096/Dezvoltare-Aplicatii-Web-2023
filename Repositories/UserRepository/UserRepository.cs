@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Proiect.Data;
 using Proiect.Models;
@@ -7,16 +8,44 @@ using Proiect.Services.UserService;
 
 namespace Proiect.Repositories.UserRepository
 {
-    public class UserRepository : GenericRepository<User>, IUserRepository
+    public class UserRepository : IUserRepository
     {
-        public UserRepository(Context context) : base(context)
+        private readonly UserManager<User> _userManager;
+        public UserRepository(UserManager<User> userManager)
         {
+            _userManager = userManager;
         }
 
-
-        public async Task<User> FindByUsername(string username)
+        public async Task<User>? GetUserById(Guid id)
         {
-            return await _table.FirstOrDefaultAsync(u => u.Username.Equals(username));
+            return await _userManager.FindByIdAsync(id.ToString());
+        }
+        public async Task<User>? GetByUsername(string username)
+        {
+            return await _userManager.FindByNameAsync(username);
+        }
+
+        public async Task CreateAsync(User user)
+        {
+            var newUser = await _userManager.CreateAsync(user);
+            if (newUser.Succeeded)
+            {
+                await _userManager.AddToRoleAsync(user, "User");
+                return;
+            }
+        }
+
+        public async Task Update(User user)
+        {
+            user.SecurityStamp = Guid.NewGuid().ToString();
+            await _userManager.UpdateAsync(user);
+        }
+
+        public async Task Delete(Guid id)
+        {
+            var userFound = await GetUserById(id);
+
+            await _userManager.DeleteAsync(userFound);
         }
     }
 }

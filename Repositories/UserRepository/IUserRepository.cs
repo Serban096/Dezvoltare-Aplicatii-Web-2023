@@ -3,8 +3,12 @@ using Proiect.Repositories.GenericRepository;
 
 namespace Proiect.Repositories.UserRepository
 {
-    public interface IUserRepository : IGenericRepository<User>
+    public interface IUserRepository
     {
-        Task<User> FindByUsername(string username);
+        Task<User>? GetUserById(Guid id);
+        Task<User>? GetByUsername(string username);
+        Task CreateAsync(User user);
+        Task Update(User user);
+        Task Delete(Guid id);
     }
 }

@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Proiect.Helpers.Jwt;
 using Proiect.Models;
 using Proiect.Models.DTOs;
 using Proiect.Models.DTOs.UserDTO;
@@ -12,73 +11,42 @@ namespace Proiect.Services.UserService
     {
         public IUserRepository _userRepository;
         public IMapper _mapper;
-        private readonly IJwt _jwtUtils;
 
-        public UserService(IUserRepository userRepository, IMapper mapper, IJwt jwtUtils)
+        public UserService(IUserRepository userRepository, IMapper mapper)
         {
             _userRepository = userRepository;
             _mapper = mapper;
-            _jwtUtils = jwtUtils;
-        }
-        public async Task<List<User>> GetAllUsers()
-        {
-            return await _userRepository.GetAllAsync();
         }
 
+        public async Task<User> GetByUsername(string username)
+        {
+            return await _userRepository.GetByUsername(username);
+        }
         public async Task<User> GetById(Guid id)
         {
-            return await _userRepository.FindByIdAsync(id);
+            return await _userRepository.GetUserById(id);
         }
 
-        public async Task<UserLoginResponse> Login(UserLoginDTO userLoginDTO)
-        {
-            var user = await _userRepository.FindByUsername(userLoginDTO.Username);
-            if (user == null || !BCrypt.Net.BCrypt.Verify(userLoginDTO.Password, user.Password))
-            {
-                return null;
-            }
-            var token = _jwtUtils.GenerateJwtToken(user);
-            return new UserLoginResponse(user, token);
-
-        }
-
-        public async Task<bool> Register(UserRegistrationDTO newUser, Role userRole)
-        {
-            var UserToCreate = new User
-            {
-                Username = newUser.Username,
-                FirstName = newUser.FirstName,
-                LastName = newUser.LastName,
-                Email = newUser.Email,
-                Password = BCrypt.Net.BCrypt.HashPassword(newUser.Password),
-                Role = userRole
-            };
-            _userRepository.CreateAsync(UserToCreate);
-            return await _userRepository.SaveAsync();
-        }
 
         public async Task Delete(Guid id)
         {
-            var user = _userRepository.FindById(id);
-            if (user == null)
-            {
-                throw new Exception("User doesnt exist");
-            }
-            _userRepository.Delete(user);
-            await _userRepository.SaveAsync();
+            await _userRepository.Delete(id);
         }
 
-        public async Task UpdateUser(UserLoginResponse user)
+        public async Task UpdateUser(UserUpdateDTO user)
         {
-            var oldUser = _userRepository.FindById(user.Id);
+            var oldUser = await  _userRepository.GetUserById(user.Id);
             if (oldUser == null)
             {
                 throw new Exception("The user doesn't exist");
             }
-            oldUser.Username = user.UserName;
+            oldUser.Username = user.Username;
+            oldUser.Password = user.Password;
+            oldUser.Email = user.Email;
+            oldUser.FirstName = user.FirstName;
+            oldUser.LastName = user.LastName;
 
-            _userRepository.Update(_mapper.Map<User>(oldUser));
-            await _userRepository.SaveAsync();
+            await _userRepository.Update(_mapper.Map<User>(oldUser));
         }
 
     }

@@ -4,21 +4,13 @@ using Proiect.Helpers.Extensions;
 using AutoMapper;
 using Proiect.Services.TeamService;
 using Proiect.Helpers.Seeders;
-using Proiect.Helpers.Jwt;
 using Proiect.Helpers;
+using Microsoft.AspNetCore.Identity;
+using Proiect.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy(name: "MyAllowSpecificOrigins", policy =>
-    {
-        policy.AllowAnyHeader()
-               .AllowAnyMethod()
-               .AllowCredentials()
-               .WithOrigins("http://localhost:7263");
-    });
-});
+
 
 // Add services to the container.
 
@@ -33,10 +25,18 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddRepositories();
 builder.Services.AddServices();
 builder.Services.AddSeeders();
-builder.Services.AddHelpers();
-builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+builder.Services.AddIdentity<User, IdentityRole<Guid>>(options =>
+{
+    options.Password.RequireDigit = false;
+    options.Password.RequiredLength = 8;
+})
+.AddRoles<IdentityRole<Guid>>()
+.AddEntityFrameworkStores<Context>()
+.AddDefaultTokenProviders();
+
 
 
 var app = builder.Build();
@@ -59,9 +59,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.UseMiddleware<JwtMiddleware>();
-
-app.UseCors("MyAllowSpecificOrigins");
 
 app.Run();
 

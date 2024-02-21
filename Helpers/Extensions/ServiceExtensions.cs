@@ -1,5 +1,4 @@
-﻿using Proiect.Helpers.Jwt;
-using Proiect.Helpers.Seeders;
+﻿using Proiect.Helpers.Seeders;
 using Proiect.Repositories.PlayerRepository;
 using Proiect.Repositories.TeamRepository;
 using Proiect.Repositories.UserRepository;
@@ -40,11 +39,5 @@ namespace Proiect.Helpers.Extensions
             return services;
         }
 
-        public static IServiceCollection AddHelpers(this IServiceCollection services)
-        {
-            services.AddTransient<IJwt, Jwt.Jwt>();
-
-            return services;
-        }
     }
 }

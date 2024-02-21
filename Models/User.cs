@@ -1,9 +1,10 @@
-﻿using Proiect.Models.Base;
+﻿using Microsoft.AspNetCore.Identity;
+using Proiect.Models.Base;
 using Proiect.Models.Enums;
 
 namespace Proiect.Models
 {
-    public class User : BaseEntity
+    public class User : IdentityUser<Guid>
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

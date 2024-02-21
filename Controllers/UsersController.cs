@@ -19,73 +19,29 @@ namespace Proiect.Controllers
             _userService = userService;
         }
 
-        [AllowAnonymous]
-        [HttpPost("login")]
-        public async Task<IActionResult> Login(Models.DTOs.UserDTO.UserLoginDTO userLoginDTO)
-        {
-            var response = await _userService.Login(userLoginDTO);
-            if (response == null)
-            {
-                return BadRequest();
-            }
-            return Ok(response);
-        }
+
+
+        /* [AllowAnonymous]
+         [HttpGet("get-users")]
+         public async Task<IActionResult> GetAllUsers()
+         {
+             return Ok(await _userService.GetAllUsers());
+         }*/
 
         [AllowAnonymous]
-        [HttpPost("create-user")]
-        public async Task<IActionResult> CreateUser(Models.DTOs.UserDTO.UserRegistrationDTO userRegistrationDTO)
+        [HttpGet("get-by-id")]
+        public async Task<IActionResult> GetById(Guid Id)
         {
-            var response = await _userService.Register(userRegistrationDTO, Role.User);
-            if (response == false)
-            {
-                return BadRequest();
-            }
-            return Ok(response);
-
+            return Ok(await _userService.GetById(Id));
         }
 
         [AllowAnonymous]
-        [HttpPost("create-admin")]
-        public async Task<IActionResult> CreateAdmin(UserRegistrationDTO userRegistrationDTO)
+        [HttpGet("get-by-username")]
+        public async Task<IActionResult> GetByUsername(string username)
         {
-            var response = await _userService.Register(userRegistrationDTO, Role.Admin);
-
-            if (response == false)
-            {
-                return BadRequest();
-            }
-
-            return Ok(response);
+            return Ok(await _userService.GetByUsername(username));
         }
 
-        [AllowAnonymous]
-        [HttpGet("get-users")]
-        public async Task<IActionResult> GetAllUsers()
-        {
-            return Ok(await _userService.GetAllUsers());
-        }
-
-        [Authorize]
-        [HttpGet("check-auth-without-role")]
-        public IActionResult GetText()
-        {
-            return Ok(new { Message = "Account is logged in" });
-        }
-
-
-        [Authorize(Roles = "User")]
-        [HttpGet("check-auth-user")]
-        public IActionResult GetTextUser()
-        {
-            return Ok(new { Message = "User is logged in" });
-        }
-
-        [Authorize(Roles = "Admin")]
-        [HttpGet("check-auth-admin")]
-        public IActionResult GetTextAdmin()
-        {
-            return Ok(new { Message = "Admin is logged in" });
-        }
         [HttpDelete]
         public async Task<IActionResult> DeleteUser(Guid userId)
         {
@@ -101,7 +57,7 @@ namespace Proiect.Controllers
         }
 
         [HttpPatch]
-        public async Task<IActionResult> EditUser([FromBody] UserLoginResponse user)
+        public async Task<IActionResult> EditUser([FromBody] UserUpdateDTO user)
         {
             try
             {
