@@ -1,9 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Proiect.Models;
 
 namespace Proiect.Data
 {
-    public class Context : DbContext
+    public class Context : IdentityDbContext<User, IdentityRole<Guid>, Guid>
     {    
         public DbSet<Player> Players { get; set; }
         public DbSet<Stadium> Stadiums { get; set; }
@@ -16,6 +18,7 @@ namespace Proiect.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             // Many to Many
             modelBuilder.Entity<TeamsCompetitions>().HasKey(tc => new { tc.TeamId, tc.CompetitionId });
 
