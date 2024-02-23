@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6kfOt+v3buu6cJA+fyPnnmHY9P7NHg7tra6+ukkr7tDunpI9UXRkrLhWH3sial4686gouIciGpUJjjlKPzYBCw==",
+  "dgSpecHash": "OQXZ1v+zXXZPHhVf3yaGYK0qOsZZQzAWovYHsbQ3iVA3HDnOGzpP3IUm/rChPglsjKYYJEgh/Gh5nevvR3xYow==",
   "success": true,
-  "projectFilePath": "C:\\Users\\baesu\\Source\\Repos\\Dezvoltare-Aplicatii-Web-2023\\Proiect.csproj",
+  "projectFilePath": "C:\\Users\\baesu\\source\\repos\\DAW\\Dezvoltare-Aplicatii-Web-2023\\Proiect.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\baesu\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\baesu\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

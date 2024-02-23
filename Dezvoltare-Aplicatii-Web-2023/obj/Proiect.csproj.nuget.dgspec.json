@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\baesu\\Source\\Repos\\Dezvoltare-Aplicatii-Web-2023\\Proiect.csproj": {}
+    "C:\\Users\\baesu\\source\\repos\\DAW\\Dezvoltare-Aplicatii-Web-2023\\Proiect.csproj": {}
   },
   "projects": {
-    "C:\\Users\\baesu\\Source\\Repos\\Dezvoltare-Aplicatii-Web-2023\\Proiect.csproj": {
+    "C:\\Users\\baesu\\source\\repos\\DAW\\Dezvoltare-Aplicatii-Web-2023\\Proiect.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\baesu\\Source\\Repos\\Dezvoltare-Aplicatii-Web-2023\\Proiect.csproj",
+        "projectUniqueName": "C:\\Users\\baesu\\source\\repos\\DAW\\Dezvoltare-Aplicatii-Web-2023\\Proiect.csproj",
         "projectName": "Proiect",
-        "projectPath": "C:\\Users\\baesu\\Source\\Repos\\Dezvoltare-Aplicatii-Web-2023\\Proiect.csproj",
+        "projectPath": "C:\\Users\\baesu\\source\\repos\\DAW\\Dezvoltare-Aplicatii-Web-2023\\Proiect.csproj",
         "packagesPath": "C:\\Users\\baesu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\baesu\\Source\\Repos\\Dezvoltare-Aplicatii-Web-2023\\obj\\",
+        "outputPath": "C:\\Users\\baesu\\source\\repos\\DAW\\Dezvoltare-Aplicatii-Web-2023\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
