@@ -21,14 +21,6 @@ namespace Proiect.Controllers
         }
 
 
-
-        /* [AllowAnonymous]
-         [HttpGet("get-users")]
-         public async Task<IActionResult> GetAllUsers()
-         {
-             return Ok(await _userService.GetAllUsers());
-         }*/
-
         [AllowAnonymous]
         [HttpGet("get-by-id")]
         public async Task<IActionResult> GetById(Guid Id)
@@ -43,7 +35,7 @@ namespace Proiect.Controllers
             return Ok(await _userService.GetByUsername(username));
         }
 
-        [HttpDelete]
+        [HttpDelete("delete-user")]
         public async Task<IActionResult> DeleteUser(Guid userId)
         {
             try
@@ -57,7 +49,7 @@ namespace Proiect.Controllers
             }
         }
 
-        [HttpPatch]
+        [HttpPatch("update-user")]
         public async Task<IActionResult> EditUser([FromBody] UserUpdateDTO user)
         {
             try

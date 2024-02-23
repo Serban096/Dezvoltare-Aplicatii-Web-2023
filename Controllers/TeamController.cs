@@ -49,7 +49,7 @@ namespace Proiect.Controllers
             }
         }
 
-        [HttpDelete]
+        [HttpDelete("DeleteTeam")]
         public async Task<IActionResult> DeleteTeam(Guid teamId)
         {
             try
@@ -63,7 +63,7 @@ namespace Proiect.Controllers
             }
         }
 
-        [HttpPatch]
+        [HttpPatch("UpdateTeam")]
         public async Task<IActionResult> EditTeam([FromBody] TeamDTO team)
         {
             try

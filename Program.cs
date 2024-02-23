@@ -21,7 +21,16 @@ builder.Services.AddDbContext<Context>(options => options.UseSqlServer(builder.C
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "MyAllowSpecificOrigins", policy =>
+    {
+        policy.WithOrigins("http://localhost:5173")
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
+});
 
 builder.Services.AddRepositories();
 builder.Services.AddServices();
@@ -60,6 +69,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.UseCors("MyAllowSpecificOrigins");
 
 app.Run();
 
